@@ -11,7 +11,6 @@ module.exports = function(eleventyConfig) {
     });
   });
 
-
   // Copy the `css` directory to the output `_site` directory
   eleventyConfig.addPassthroughCopy("src/css");
 

@@ -22,6 +22,11 @@ p {
   font-weight: lighter;
 }
 
+ul{
+  list-style-type: none;
+  color: red;
+}
+
 .grid {
   display: grid;
   grid-template-columns: minmax(auto, 500px) 1fr 100px;

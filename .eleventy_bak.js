@@ -4,10 +4,10 @@ module.exports = function(eleventyConfig) {
   // Register the date filter
   eleventyConfig.addNunjucksFilter("date", dateFilter);
 
-  // Add a collection for blog posts sorted by custom 'order' field
+  // Add a collection for blog posts
   eleventyConfig.addCollection("posts", function(collectionApi) {
     return collectionApi.getFilteredByGlob("src/posts/*.md").sort((a, b) => {
-      return a.data.order - b.data.order;
+      return b.date - a.date;
     });
   });
 

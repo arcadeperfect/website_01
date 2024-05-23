@@ -1,12 +1,16 @@
+<!-- src/_includes/layouts/home.njk -->
 {% extends "layouts/base.njk" %}
 
-{% block content %}
-<h2>Blog Entries</h2>
+{% block main %}
+<h1 class="title">Alex Harding</h1>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro reiciendis labore sed quod veniam iste voluptatem iusto inventore eaque. Officia veritatis et aut fuga id quidem nam odio, amet beatae similique eum sint assumenda error rem. Facere, dolor nesciunt ut iusto incidunt dolorum, exercitationem nemo fugiat quam impedit sed illo.</p>
+
+<!-- collection of posts -->
 <ul>
-  {% for post in collections.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.data.title }}</a> - {{ post.date | date("MMMM D, YYYY") }}
-    </li>
-  {% endfor %}
+    {% for post in collections.posts %}
+        <li>
+            <a href="{{ post.url }}">{{ post.data.title }}</a> - {{ post.date | date("MMMM D, YYYY") }}
+        </li>
+    {% endfor %}
 </ul>
 {% endblock %}

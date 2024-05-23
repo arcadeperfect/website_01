@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>{{ title }}</title>
 </head>
 <body>
-  <header>
-    <h1>{{ title }}</h1>
-  </header>
-  <main>
-    {{ content | safe }}
-  </main>
-  <footer>
-    <p>&copy; {{ site.title }} {{ site.year }}</p>
-  </footer>
+    <div class="grid">
+        <div class="item main {% if page.url == '/' %}home-main{% else %}post-main{% endif %}">
+            {% block main %}{% endblock %}
+        </div>
+        <div class="item sidebar">
+            <h1 class="title"></h1>
+            <h1 class="side-text">
+                sidebar
+            </h1>
+        </div>
+    </div>
 </body>
 </html>

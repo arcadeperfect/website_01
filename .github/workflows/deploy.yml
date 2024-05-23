@@ -25,11 +25,13 @@ jobs:
       run: npx eleventy
 
     - name: Debug git status
-      run: git status
+      run: |
+        git status
+        git log -n 5
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./_site
-        force_orphan: true
+        force_orphan: true  # Ensure a clean state by forcing an orphan branch

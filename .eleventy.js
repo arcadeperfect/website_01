@@ -16,6 +16,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/CNAME");
 
   return {
+    pathPrefix: "/website_01/",  // Add your repository name here if it’s a project site
+
     dir: {
       input: "src",
       includes: "_includes",
